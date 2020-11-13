@@ -5,9 +5,10 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
+import static javax.persistence.GenerationType.SEQUENCE;
 
 @Getter
 @SuperBuilder
@@ -15,9 +16,8 @@ import javax.persistence.MappedSuperclass;
 @NoArgsConstructor
 public abstract class MatchEvent {
 
-    //TODO which strategy?
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = SEQUENCE)
     private Long id;
 
     private Long matchId;
