@@ -1,0 +1,28 @@
+POST http://localhost:8080/api/match
+Content-Type: text/plain
+
+< data/combatlog_1.txt
+
+> {%
+    client.global.set("matchId", response.body);
+%}
+
+###
+
+GET http://localhost:8080/api/match/{{matchId}}
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/match/{{matchId}}/rubick/items
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/match/{{matchId}}/rubick/spells
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/match/{{matchId}}/rubick/damage
+Accept: application/json

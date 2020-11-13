@@ -1,10 +1,10 @@
 package gg.bayes.challenge.parser;
 
 import gg.bayes.challenge.parser.MatchLogParser.MatchEventParsed;
-import gg.bayes.challenge.persistence.event.HeroEvent;
 import gg.bayes.challenge.persistence.event.HeroEvent.HeroDamaged;
 import gg.bayes.challenge.persistence.event.HeroEvent.HeroKilled;
 import gg.bayes.challenge.persistence.event.HeroEvent.ItemPurchased;
+import gg.bayes.challenge.persistence.event.HeroEvent.SpellCasted;
 import gg.bayes.challenge.persistence.event.MatchEvent;
 import gg.bayes.challenge.persistence.event.MatchEventRepository.HeroEventRepository.HeroDamagedEventRepository;
 import gg.bayes.challenge.persistence.event.MatchEventRepository.HeroEventRepository.HeroKilledEventRepository;
@@ -56,8 +56,8 @@ public class MatchEventListeners {
         @Bean
         MatchEventListener spellCastedEventListener(SpellCastedEventRepository spellCastedEventRepository) {
             return MatchEventListener.builder()
-                                     .selector(e -> e instanceof SpellCastedEventRepository)
-                                     .consumer(e -> spellCastedEventRepository.save((HeroEvent.SpellCasted) e))
+                                     .selector(e -> e instanceof SpellCasted)
+                                     .consumer(e -> spellCastedEventRepository.save((SpellCasted) e))
                                      .build();
         }
 

@@ -1,0 +1,26 @@
+[
+  {
+    "spell": "lil_shredder",
+    "casts": 5
+  },
+  {
+    "spell": "gobble_up",
+    "casts": 13
+  },
+  {
+    "spell": "scatterblast",
+    "casts": 36
+  },
+  {
+    "spell": "spit_creep",
+    "casts": 9
+  },
+  {
+    "spell": "mortimer_kisses",
+    "casts": 6
+  },
+  {
+    "spell": "firesnap_cookie",
+    "casts": 17
+  }
+]

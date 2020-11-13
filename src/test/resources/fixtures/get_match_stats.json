@@ -1,0 +1,42 @@
+[
+  {
+    "hero": "snapfire",
+    "kills": 2
+  },
+  {
+    "hero": "rubick",
+    "kills": 4
+  },
+  {
+    "hero": "mars",
+    "kills": 6
+  },
+  {
+    "hero": "dragon_knight",
+    "kills": 3
+  },
+  {
+    "hero": "bane",
+    "kills": 2
+  },
+  {
+    "hero": "puck",
+    "kills": 7
+  },
+  {
+    "hero": "death_prophet",
+    "kills": 9
+  },
+  {
+    "hero": "abyssal_underlord",
+    "kills": 6
+  },
+  {
+    "hero": "pangolier",
+    "kills": 5
+  },
+  {
+    "hero": "bloodseeker",
+    "kills": 11
+  }
+]

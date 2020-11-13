@@ -1,0 +1,27 @@
+[
+  {
+    "target": "rubick",
+    "damage_instances": 33,
+    "total_damage": 1922
+  },
+  {
+    "target": "mars",
+    "damage_instances": 45,
+    "total_damage": 3275
+  },
+  {
+    "target": "bane",
+    "damage_instances": 24,
+    "total_damage": 1534
+  },
+  {
+    "target": "death_prophet",
+    "damage_instances": 38,
+    "total_damage": 1966
+  },
+  {
+    "target": "bloodseeker",
+    "damage_instances": 9,
+    "total_damage": 662
+  }
+]
