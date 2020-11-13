@@ -53,7 +53,6 @@ public class MatchController {
     @GetMapping("{matchId}/{heroName}/damage")
     public ResponseEntity<List<HeroDamage>> getDamage(@PathVariable("matchId") Long matchId,
                                                       @PathVariable("heroName") String heroName) {
-        // TODO use match service to retrieve stats
         return ResponseEntity.ok(matchService.damage(matchId, heroName));
     }
 }

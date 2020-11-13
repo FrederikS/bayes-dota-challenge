@@ -18,15 +18,12 @@ public interface MatchRepository extends Repository<Match, Long> {
     @Query("select target as target, sum(damage) as damage, count(id) as instances from HeroDamaged where matchId=?1 and hero=?2 group by target")
     List<DamageStats> findDamageStatsByMatchIdAndHero(Long matchId, String hero);
 
-    interface HeroStats {
+    interface KillStats {
         String getHero();
-    }
-
-    interface KillStats extends HeroStats {
         Integer getKills();
     }
 
-    interface SpellStats extends HeroStats {
+    interface SpellStats {
         String getSpell();
         Integer getCasts();
     }

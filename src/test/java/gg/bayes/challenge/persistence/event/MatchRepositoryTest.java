@@ -59,7 +59,7 @@ class MatchRepositoryTest {
 
         assertThat(spellStats).hasSize(1)
                               .first()
-                              .returns("enigma", from(SpellStats::getHero))
+                              .returns("black_hole", from(SpellStats::getSpell))
                               .returns(2, from(SpellStats::getCasts));
     }
 
