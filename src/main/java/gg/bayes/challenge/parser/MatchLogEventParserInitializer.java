@@ -34,8 +34,8 @@ public class MatchLogEventParserInitializer implements ApplicationContextAware, 
               .forEach(matchLogEventParserRegistry::register);
     }
 
-    private MatchLogEventPatternParser buildEventPatternParserFor(Class<? extends MatchEvent> type) {
-        return MatchLogEventPatternParser.builder()
+    private <T extends MatchEvent> MatchLogEventPatternParser<T> buildEventPatternParserFor(Class<T> type) {
+        return MatchLogEventPatternParser.<T>builder()
                                          .pattern(config.getEventPatterns().get(type))
                                          .mapping(resolveMapping(applicationContext, type))
                                          .build();

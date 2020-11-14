@@ -9,15 +9,15 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MatchLogEventPatternParser implements MatchLogEventParser {
+public class MatchLogEventPatternParser<T extends MatchEvent> implements MatchLogEventParser<T> {
 
     private final Pattern pattern;
-    private final PatternMapping<? extends MatchEvent> mapping;
+    private final PatternMapping<T> mapping;
 
     private Matcher matcher;
 
     @Builder
-    public MatchLogEventPatternParser(Pattern pattern, PatternMapping<? extends MatchEvent> mapping) {
+    public MatchLogEventPatternParser(Pattern pattern, PatternMapping<T> mapping) {
         this.pattern = pattern;
         this.mapping = mapping;
     }
@@ -29,7 +29,7 @@ public class MatchLogEventPatternParser implements MatchLogEventParser {
     }
 
     @Override
-    public MatchEvent parse(long matchId, String logEntry) {
+    public T parse(long matchId, String logEntry) {
         final long timestamp = LocalTime.parse(matcher.group("time")).toNanoOfDay();
 
         return mapping.apply(PatternMatcher.builder()

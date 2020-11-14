@@ -2,9 +2,9 @@ package gg.bayes.challenge.parser;
 
 import gg.bayes.challenge.persistence.event.MatchEvent;
 
-interface MatchLogEventParser {
+interface MatchLogEventParser<T extends MatchEvent> {
 
     boolean isParsable(String logEntry);
-    MatchEvent parse(long matchId, String logEntry);
+    T parse(long matchId, String logEntry);
 
 }
