@@ -9,6 +9,8 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static java.time.temporal.ChronoField.MILLI_OF_DAY;
+
 public class MatchLogEventPatternParser<T extends MatchEvent> implements MatchLogEventParser<T> {
 
     private final Pattern pattern;
@@ -30,7 +32,7 @@ public class MatchLogEventPatternParser<T extends MatchEvent> implements MatchLo
 
     @Override
     public T parse(long matchId, String logEntry) {
-        final long timestamp = LocalTime.parse(matcher.group("time")).toNanoOfDay();
+        final long timestamp = LocalTime.parse(matcher.group("time")).getLong(MILLI_OF_DAY);
 
         return mapping.apply(PatternMatcher.builder()
                                            .matchId(matchId)
